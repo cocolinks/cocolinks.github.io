@@ -1,0 +1,71 @@
+body {
+    padding-top: 3%;
+    background-color: #ff4c4c;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 100%;
+    position: relative;
+    color: white;
+}
+li {
+    list-style: none;
+}
+ul {
+    padding-inline-start: 10%;
+}
+nav {
+    margin:15px;
+}
+a {
+    text-decoration: none;
+}
+footer {
+    padding:20px;
+    background-color: #333;
+    color:white;
+    bottom: 0;
+    position: fixed;
+    width: -webkit-fill-available;
+}
+/* CLASES */
+img.avatar {
+    border-radius:50%;
+}
+a.avatar, p a {
+    color:white;
+}
+.iconbar {
+    transition:.5s;
+}
+.iconbar img {
+    max-width: 40px;
+    transition: .3s;
+    border-radius: 50px;
+}
+.iconbar img:hover {
+    background-color: white;
+}
+.botones {
+    display: table;
+    height:200px;
+ }
+.botoncitos {
+    display: table-cell;
+    vertical-align: middle;
+ }
+.btn {
+    color:#333;
+    background-color: white;
+    padding:10px;
+    border: solid 2px #333;
+    max-width: 80%;
+    margin:5px;
+    transition:.5s;
+    box-shadow: -4px 4px black;
+}
+.btn:hover {
+    color:#ff4c4c;
+    background-color: #333;
+    box-shadow: none;
+}

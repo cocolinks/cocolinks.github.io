@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- OBJETIVOS:
+    Iconos linkedin, etc, en <nav> y con su link cada uno.
+    Texto dentro de un <section> y su respectivo <p>
+    Botones en <ul> y <li>, respetar style.
+    Completar los OG de facebook y twitter.
+    En el footer: Copyright - año.
+    Poner con microformatos <meta>: Autor, email, thumbnails en facebook y twitter, nombre, etc de la empresa.
+    -->
+
+    <!-- Nota para Jony:
+    A pesar de que tengo conocimientos de html y css, me complicó un montón poder centrar los botones:
+    No me tomaba text-align:center, ni tampoco margin:0 auto, ni en el section, ni en el ul, 
+    ni en el a, ni en el li. Ni siquiera poniendo !important.
+    Terminé googleando e hice una manganeta: como a los botones les puse un max-width de 80%, usé
+    "padding-inline-start: 10%;" no conocía esto, pero en la práctica me hizo que quede siempre centrado 
+    (al menos aparentemente), pero tengo mis serias dudas de que esto sea una buena práctica, de hecho a pantalla
+    de PC ya queda descentrado.
+    -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linktree</title>
+    <!-- Metas con info sobre la web -->
+    <meta name="description" content="Clon de linktree de @FernetConCoco">
+    <meta name="keywords" content="linktree, links, arbol de links, fernetconcoco, alejandro arlia">
+    <meta name="author" content="Alejandro Arlía">
+    <meta name="copyright" content="Alejandro Arlía">
+    <meta name="robots" content="index nofollow">
+    <link rel="icon" href="img/coco.png" type="image/png">
+    <!-- Metas para Fbk -->
+    <meta property="og:url" content="https://linktreecoco.github.io">
+    <meta property="og:title" content="Linktree de @FernetConCoco">
+    <meta property="og:description" content="Este es un clon de linktr.ee generado por Coco para CodeaRock.com en FBK">
+    <meta property="og:type" content="Contenedor de links">
+    <meta property="og:image" content="img/coco.png">
+    <!-- Metas para Twitter -->
+    <meta property="twitter:url" content="https://linktreecoco.github.io">
+    <meta property="twitter:title" content="Linktree de @FernetConCoco">
+    <meta property="twitter:description" content="Este es un clon de linktr.ee generado por Coco para CodeaRock.com en Twitter">
+    <meta property="twitter:type" content="Contenedor de links">
+    <meta property="twitter:image" content="img/coco.png">
+
+    <!-- Cargo hoja de estilos -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <!-- Foto principal -->
+    <img class="avatar" src="img/coco.png">
+    <a class="avatar" href="https://instagram.com/fernetconcoco"><p>@FernetConCoco</a>
+    <!-- Barra de iconos de redes y contactos personales -->
+    <nav class="iconbar">
+        <a href="mailto:alejandroarlia@gmail.com"><img src="img/email.png"></a>
+        <a href="https://www.linkedin.com/in/alejandroarlia/" target="_blank"><img src="img/linkedin.png"></a>
+        <a href="https://github.com/alejandroarlia" target="_blank"><img src="img/github.png"></a>
+        <a href="https://instagram.com/fernetconcoco" target="_blank"><img src="img/instagram.png"></a>
+    </nav>
+    <!-- Texto descriptivo + botones -->
+    <section>
+        <p>
+            Manager / Productor<br>
+            <br>
+            <a href="https://instagram.com/elmundolimon" target="_blank">@elmundolimon</a><br>
+            <a href="https://instagram.com/seruporcinema" target="_blank">@seruporcinema</a>
+        </p>
+        <ul>
+            <a href="https://mianticipada.com" target="_blank"><li class="btn">MiAnticipada</li></a>
+            <a href="https://bronto.ar" target="_blank"><li class="btn">Bronto.ar</li></a>
+            <a href="https://seruporcinema.com.ar" target="_blank"><li class="btn">Web Cinema Verité</li></a>
+        </ul>
+    </section>
+    <footer><p>FernetConCoco Ⓒ - 2023 - <a href="https://codearock.com" target="_blank">CodeaRock.</a></p></footer>
+</body>
+</html>
