@@ -1,1 +1,1 @@
-# cocolinks.githubpage.io
+# cocolinks.github.io
