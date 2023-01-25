@@ -12,6 +12,7 @@ li {
     list-style: none;
 }
 ul {
+    max-width: 80%;
     padding-inline-start: 10%;
 }
 nav {
@@ -50,7 +51,6 @@ a.avatar, p a {
     background-color: white;
     padding:10px;
     border: solid 2px #333;
-    max-width: 80%;
     margin:5px;
     transition:.5s;
     box-shadow: -4px 4px black;
