@@ -14,6 +14,7 @@ li {
 ul {
     max-width: 80%;
     padding-inline-start: 10%;
+    margin-bottom: 10px;
 }
 nav {
     margin:15px;
@@ -54,6 +55,7 @@ a.avatar, p a {
     margin:5px;
     transition:.5s;
     box-shadow: -4px 4px black;
+    margin-bottom: 10px;
 }
 .btn:hover {
     color:#ff4c4c;
