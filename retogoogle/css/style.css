@@ -1,0 +1,105 @@
+/** GENERALES **/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #202124;
+    margin: 0;
+}
+section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+footer {
+    display:block;
+    background: #171717;
+    margin: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+/** ANIDADOS **/
+header a {
+    color:white;
+}
+header li:nth-child(3):hover {
+    background-color: #333;
+}
+header ul  {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+header li {
+    padding:15px;
+    border-radius: 100%;
+}
+header li:hover {
+    text-decoration: underline;
+}
+header img {
+    max-width: 50px;
+    border-radius: 100%;
+}
+footer ul {
+    display: flex;
+    align-items: center;
+}
+footer ul.izquierda {
+    width:48%;
+    justify-content: start;
+}
+footer ul.derecha {
+    width:48%;
+    justify-content: end;
+}
+/** PERSONALIZADOS **/
+.principal {
+    display: flex;
+    flex-flow: column;
+}
+.formulario {
+
+}
+#logo-principal {
+    max-width: 350px;
+    margin-bottom:40px;
+    text-align: center;
+}
+img#logo-principal {
+    text-align: center;
+}
+footer .arriba {
+    padding: 10px 15px;
+    border-bottom: 1px solid #3c4043;
+}
+footer .arriba,footer .abajo {
+    display: flex;
+    width:100%;
+}
+.arriba p {
+    color:#9aa0a6;
+}
+ul.izquierda {
+    padding-left: 20px;
+}
+footer ul li {
+    font-size: 14px;
+    padding-right: 20px;
+}
+footer ul li a {
+    color: #9aa0a6 !important;
+}
+footer ul li a:hover {
+    text-decoration: underline;
+}
+input {
+    width: 600px;
+
+}
