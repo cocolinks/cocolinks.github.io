@@ -24,9 +24,16 @@ footer {
     position: absolute;
     width: 100%;
 }
+svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+    fill: currentColor;
+}
 /** ANIDADOS **/
 header a {
     color:white;
+    font-size: 13px;
 }
 header li:nth-child(3):hover {
     background-color: #333;
@@ -44,7 +51,7 @@ header li:hover {
     text-decoration: underline;
 }
 header img {
-    max-width: 50px;
+    max-width: 48px;
     border-radius: 100%;
 }
 footer ul {
@@ -60,12 +67,91 @@ footer ul.derecha {
     justify-content: end;
 }
 /** PERSONALIZADOS **/
+.choco {
+    width: 24px;
+}
 .principal {
     display: flex;
     flex-flow: column;
+    flex-direction: column;
+    align-items: center;
 }
 .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.lupa {
+    color:#9aa0a6;
+    display: flex;
+    align-items: center;
+    padding-right: 13px;
+    margin-top: -5px;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+}
+form {
+    text-align: center;
+}
+.form-input {
+    display: flex;
+    z-index: 3;
+    height: 24px;
+    background: #202124;
+    border: 1px solid #5f6368;
+    box-shadow: none;
+    border-radius: 24px;
+    margin: 0 auto;
+    width: 638px;
+    max-width: 584px;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    transition: all 0.3s ease-in;
+    position: relative;
+}
 
+
+.input-holder:hover {
+    background: #2f3135;
+    border: 1px solid #5f6368;
+}
+.lupita {
+    width: 20px;
+    color: #9aa0a6;
+}
+.botones a:link, .botones a:visited {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+.botones img {
+    width: 24px;
+    height: 24px;
+}
+.input {
+    flex: 1;
+}
+.input input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #9aa0a6;
+    font-size: 16px;
+    width: 100%;
+}
+.btns-holder a:link, .btns-holder a:visited {
+    background-color: #303134;
+    border: 1px solid #303134;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
 }
 #logo-principal {
     max-width: 350px;
@@ -79,7 +165,10 @@ footer .arriba {
     padding: 10px 15px;
     border-bottom: 1px solid #3c4043;
 }
-footer .arriba,footer .abajo {
+footer .arriba{
+    display: flex;
+}
+footer .abajo {
     display: flex;
     width:100%;
 }
