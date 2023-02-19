@@ -40,20 +40,16 @@
                     <div class="establecerPrioridad">
                         <p>Prioridad:</p>
                         <div class="form-check">
-                            <input class="prioridad-baja form-check-input form-prioridad" type="radio" name="prioridad-baja" id="form-prioridad" value="lista-baja">
-                            <label class="form-check-label" for="form-prioridad"></label>
+                            <input class="prioridad-baja form-check-input" type="radio" name="prioridad" id="form-prioridad" value="lista-baja">
                         </div>
                         <div class="form-check">
-                            <input class="prioridad-media form-check-input form-prioridad" type="radio" name="prioridad-media" id="form-prioridad" value="lista-media">
-                            <label class="form-check-label" for="form-prioridad"></label>
+                            <input class="prioridad-media form-check-input" type="radio" name="prioridad" id="form-prioridad" value="lista-media">
                         </div>
                         <div class="form-check">
-                            <input class="prioridad-alta form-check-input form-prioridad" type="radio" name="prioridad-alta" id="form-prioridad" value="lista-alta">
-                            <label class="form-check-label" for="form-prioridad"></label>
+                            <input class="prioridad-alta form-check-input" type="radio" name="prioridad" id="form-prioridad" value="lista-alta">
                         </div>
                         <div class="form-check">
-                            <input class="prioridad-urgente form-check-input form-prioridad" type="radio" name="prioridad-urgente" id="form-prioridad" value="lista-urgente">
-                            <label class="form-check-label" for="form-prioridad"></label>
+                            <input class="prioridad-urgente form-check-input" type="radio" name="prioridad" id="form-prioridad" value="lista-urgente">
                         </div>
                     </div>
                     <hr>
@@ -84,7 +80,7 @@
             let textoTareaForm = formulario.value;
             console.log(textoTareaForm);
             // 2) Guardo prioridad
-            let formPrioridades = document.getElementById('form-prioridad');
+            let formPrioridades = document.getElementsByName('prioridad');
             let colorPrioridad = formPrioridades.value;
             console.log(colorPrioridad);
             
