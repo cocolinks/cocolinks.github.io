@@ -30,8 +30,8 @@
     </header>
     <section class="container">
         <div class="row main">
-            <div class="col-3"></div>
-            <div class="col-6">
+            <div class="col-1"></div>
+            <div class="col-10">
                 <div id="ingresaTarea" class="ingresaTarea">
                     <h1>Nueva tarea</h1>
                     <hr>
@@ -40,16 +40,16 @@
                     <div class="establecerPrioridad">
                         <p>Prioridad:</p>
                         <div class="form-check">
-                            <input class="prioridad-baja form-check-input" type="radio" name="prioridad" id="form-prioridad" value="lista-baja">
+                            <input class="prioridad-baja form-check-input" type="radio" name="formPrioridad" id="form-prioridad" value="lista-baja">
                         </div>
                         <div class="form-check">
-                            <input class="prioridad-media form-check-input" type="radio" name="prioridad" id="form-prioridad" value="lista-media">
+                            <input class="prioridad-media form-check-input" type="radio" name="formPrioridad" id="form-prioridad" value="lista-media">
                         </div>
                         <div class="form-check">
-                            <input class="prioridad-alta form-check-input" type="radio" name="prioridad" id="form-prioridad" value="lista-alta">
+                            <input class="prioridad-alta form-check-input" type="radio" name="formPrioridad" id="form-prioridad" value="lista-alta">
                         </div>
                         <div class="form-check">
-                            <input class="prioridad-urgente form-check-input" type="radio" name="prioridad" id="form-prioridad" value="lista-urgente">
+                            <input class="prioridad-urgente form-check-input" type="radio" name="formPrioridad" id="form-prioridad" value="lista-urgente">
                         </div>
                     </div>
                     <hr>
@@ -59,11 +59,10 @@
                     </div>
                 </div>
                 <ul class="list-group" id="contenedorLista">
-                    <li class="list-group-item active">Lista de tareas</li>
                 </ul>
                 <a href="#"><button class="boton-agregar" id="btn-agregar"><i class="fa-solid fa-plus"></i></button></a>
             </div>
-            <div class="col-3"></div>
+            <div class="col-1"></div>
         </div>
     </section>
 
@@ -80,36 +79,19 @@
             let textoTareaForm = formulario.value;
             console.log(textoTareaForm);
             // 2) Guardo prioridad
-            let formPrioridades = document.getElementsByName('prioridad');
+            //let formPrioridades = document.getElementById('form-prioridad');
+            let formPrioridades = document.getElementsByName('formPrioridad');
             let colorPrioridad = formPrioridades.value;
             console.log(colorPrioridad);
             
             // 2) Creo un <li> en lista de tareas.
             let agregoTarea = document.getElementById('contenedorLista');
             // 3) Agrego border a la lista, con color según prioridad + Agrego texto del input a la tarea.
-            let pegoTextoEnTarea = `<li class="list-group-item ${colorPrioridad}">${textoTareaForm}</li>`;
+            let pegoTextoEnTarea = `<div class="lista-de-tareas"><li class="list-group-item ${colorPrioridad}"><img class="avatar" src="images/todoicon.png"><p>${textoTareaForm}</p><i class="fa-regular fa-square"></i><i class="fa-solid fa-trash-can"></i></li></div>`;
             agregoTarea.innerHTML += pegoTextoEnTarea;
             ingresaTarea.classList.remove('aparecer');
             formulario.value = ''
-            formPrioridades.value = ''
         })
-        
-        
-        /*
-        let textoLineaModelo = form.value;
-        // let nombreTarea = form.value;
-        // Genero un listener para el botón.
-        let accionBotonCrear = document.getElementById('btn-crear').addEventListener('click', function(){
-            
-            // let textoLineaModelo = document.getElementById(input.value);
-            let lineaModelo = `<li class="list-group-item">${textoLineaModelo}</li>`;
-            //let lineaModelo = `<li class="list-group-item">Hola</li>`;
-            padre.innerHTML += lineaModelo;
-        })
-        //addButton.addEventListener('click', () => {
-        //    ingresa-tarea.classList.toggle('aparecer')
-        //})
-        */
     </script>
 </body>
 </html>
