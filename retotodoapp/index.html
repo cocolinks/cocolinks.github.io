@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list App</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Mis Estilos -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header> 
+        <div class="container">
+            <div class="row header">
+                <div class="col-2 header-1"><a href="#"><a class="hamburguesa" href="#"><i class="fa-solid fa-bars"></i></a></div>
+                <div class="col-8 header-2"><h3>To Do List</h3></div>
+                <div class="col-2 header-3"><img class="avatar" src="images/coco200x200.png"></div>
+            </div>
+        </div>
+    </header>
+    <section class="container">
+        <div class="row main">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div id="ingresaTarea" class="ingresaTarea">
+                    <h1>Nueva tarea</h1>
+                    <hr>
+                    <input type="text" id="inputNombreTarea" placeholder="Nombre de la tarea">
+                    <hr>
+                    <div class="establecerPrioridad">
+                        <p>Prioridad:</p>
+                        <div class="form-check">
+                            <input class="prioridad-baja form-check-input form-prioridad" type="radio" name="prioridad-baja" id="form-prioridad" value="lista-baja">
+                            <label class="form-check-label" for="form-prioridad"></label>
+                        </div>
+                        <div class="form-check">
+                            <input class="prioridad-media form-check-input form-prioridad" type="radio" name="prioridad-media" id="form-prioridad" value="lista-media">
+                            <label class="form-check-label" for="form-prioridad"></label>
+                        </div>
+                        <div class="form-check">
+                            <input class="prioridad-alta form-check-input form-prioridad" type="radio" name="prioridad-alta" id="form-prioridad" value="lista-alta">
+                            <label class="form-check-label" for="form-prioridad"></label>
+                        </div>
+                        <div class="form-check">
+                            <input class="prioridad-urgente form-check-input form-prioridad" type="radio" name="prioridad-urgente" id="form-prioridad" value="lista-urgente">
+                            <label class="form-check-label" for="form-prioridad"></label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="botones">
+                        <button><i class="fa-solid fa-xmark"></i> Cancelar</button>
+                        <button id="btn-crear"><i class="fa-solid fa-clipboard-list"></i> Crear tarea</button>
+                    </div>
+                </div>
+                <ul class="list-group" id="contenedorLista">
+                    <li class="list-group-item active">Lista de tareas</li>
+                </ul>
+                <a href="#"><button class="boton-agregar" id="btn-agregar"><i class="fa-solid fa-plus"></i></button></a>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </section>
+
+
+    <script>
+        // Creo evento para que btn-agregar haga aparecer a ingresarTarea
+        document.getElementById('btn-agregar').addEventListener('click', () => {
+            ingresaTarea.classList.toggle('aparecer')
+        })
+        // Creo evento para que btn-crear guarde una viariable con el texto del input-nombre-tarea.
+        let accionBotonCrear = document.getElementById('btn-crear').addEventListener('click', function () {
+            // 1) Guardo texto del input
+            let formulario = document.getElementById('inputNombreTarea');
+            let textoTareaForm = formulario.value;
+            console.log(textoTareaForm);
+            // 2) Guardo prioridad
+            let formPrioridades = document.getElementById('form-prioridad');
+            let colorPrioridad = formPrioridades.value;
+            console.log(colorPrioridad);
+            
+            // 2) Creo un <li> en lista de tareas.
+            let agregoTarea = document.getElementById('contenedorLista');
+            // 3) Agrego border a la lista, con color según prioridad + Agrego texto del input a la tarea.
+            let pegoTextoEnTarea = `<li class="list-group-item ${colorPrioridad}">${textoTareaForm}</li>`;
+            agregoTarea.innerHTML += pegoTextoEnTarea;
+            ingresaTarea.classList.remove('aparecer');
+            formulario.value = ''
+            formPrioridades.value = ''
+        })
+        
+        
+        /*
+        let textoLineaModelo = form.value;
+        // let nombreTarea = form.value;
+        // Genero un listener para el botón.
+        let accionBotonCrear = document.getElementById('btn-crear').addEventListener('click', function(){
+            
+            // let textoLineaModelo = document.getElementById(input.value);
+            let lineaModelo = `<li class="list-group-item">${textoLineaModelo}</li>`;
+            //let lineaModelo = `<li class="list-group-item">Hola</li>`;
+            padre.innerHTML += lineaModelo;
+        })
+        //addButton.addEventListener('click', () => {
+        //    ingresa-tarea.classList.toggle('aparecer')
+        //})
+        */
+    </script>
+</body>
+</html>
