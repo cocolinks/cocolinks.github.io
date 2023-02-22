@@ -35,27 +35,35 @@
                 <div id="ingresaTarea" class="ingresaTarea">
                     <h1>Nueva tarea</h1>
                     <hr>
-                    <input type="text" id="inputNombreTarea" placeholder="Nombre de la tarea">
-                    <hr>
-                    <div class="establecerPrioridad">
-                        <p>Prioridad:</p>
-                        <div class="form-check">
-                            <input class="prioridad-baja form-check-input" type="radio" name="formPrioridad" id="form-prioridad" value="lista-baja">
-                        </div>
-                        <div class="form-check">
+                    <label for="inputNombreTarea">Nombre de la tarea</label>
+                    <input type="text" id="inputNombreTarea" placeholder="Ingresá un nombre">
+                    <label for="inputTipoTarea">Tipo de tarea</label>
+                    <select class="form-select" aria-label="" id="inputTipoTarea">
+                        <option selected>Elegí el tipo de tarea</option>
+                        <option value="personal">Personal</option>
+                        <option value="domestica">Doméstica</option>
+                        <option value="entretenimiento">Entretenimiento</option>
+                        <option value="laboral">Laboral</option>
+                    </select>
+                    <label for="inputDescripcionTarea">Descripción</label>
+                    <textarea name="descripcion-tarea" id="inputDescripcionTarea" rows="5"  placeholder="Ingresá una descripción..."></textarea>
+                    <label for="inputPrioridad">Prioridad</label>
+                    <select class="form-select" aria-label="" id="inputPrioridad">
+                        <option selected>Elegí una prioridad</option>
+                        <option value="baja">Baja</option>
+                        <option value="media">Media</option>
+                        <option value="alta">Alta</option>
+                        <option value="urgente">Urgente</option>
+                    </select>    
+                        <!-- <input class="prioridad-baja form-check-input" type="radio" name="formPrioridad" id="form-prioridad" value="lista-baja">
                             <input class="prioridad-media form-check-input" type="radio" name="formPrioridad" id="form-prioridad" value="lista-media">
-                        </div>
-                        <div class="form-check">
                             <input class="prioridad-alta form-check-input" type="radio" name="formPrioridad" id="form-prioridad" value="lista-alta">
-                        </div>
-                        <div class="form-check">
                             <input class="prioridad-urgente form-check-input" type="radio" name="formPrioridad" id="form-prioridad" value="lista-urgente">
-                        </div>
-                    </div>
+                        -->
                     <hr>
                     <div class="botones">
                         <button><i class="fa-solid fa-xmark"></i> Cancelar</button>
-                        <button id="btn-crear"><i class="fa-solid fa-clipboard-list"></i> Crear tarea</button>
+                        <button type="submit" for="prioridades" id="btn-crear"><i class="fa-solid fa-clipboard-list"></i> Crear tarea</button>
                     </div>
                 </div>
                 <ul class="list-group" id="contenedorLista">
@@ -72,6 +80,10 @@
         document.getElementById('btn-agregar').addEventListener('click', () => {
             ingresaTarea.classList.toggle('aparecer')
         })
+        // Creo evento para borrar tareas de la lista.
+        function eliminarTarea() {
+            document.getElementById('contenedorLista');
+        }
         // Creo evento para que btn-crear guarde una viariable con el texto del input-nombre-tarea.
         let accionBotonCrear = document.getElementById('btn-crear').addEventListener('click', function () {
             // 1) Guardo texto del input
@@ -80,14 +92,18 @@
             console.log(textoTareaForm);
             // 2) Guardo prioridad
             //let formPrioridades = document.getElementById('form-prioridad');
-            let formPrioridades = document.getElementsByName('formPrioridad');
+            let formPrioridades = document.getElementById('inputPrioridad');
             let colorPrioridad = formPrioridades.value;
+
             console.log(colorPrioridad);
             
             // 2) Creo un <li> en lista de tareas.
             let agregoTarea = document.getElementById('contenedorLista');
-            // 3) Agrego border a la lista, con color según prioridad + Agrego texto del input a la tarea.
-            let pegoTextoEnTarea = `<div class="lista-de-tareas"><li class="list-group-item ${colorPrioridad}"><img class="avatar" src="images/todoicon.png"><p>${textoTareaForm}</p><i class="fa-regular fa-square"></i><i class="fa-solid fa-trash-can"></i></li></div>`;
+            // 3) Elijo icono a mostrar según tipo de tarea.
+            let tipoTarea = document.getElementById('inputTipoTarea').value;
+            // 4) Agrego border a la lista, con color según prioridad.
+            // 5) Agrego Nombre (texto del input) a la tarea.
+            let pegoTextoEnTarea = `<li class="list-group-item lista-de-tareas lista-${colorPrioridad}"><img class="img-tarea" src="images/${tipoTarea}.png"><p>${textoTareaForm}</p><i class="fa-regular fa-square"></i><i id="btn-eliminar" class="fa-solid fa-trash-can"></i></li>`;
             agregoTarea.innerHTML += pegoTextoEnTarea;
             ingresaTarea.classList.remove('aparecer');
             formulario.value = ''
